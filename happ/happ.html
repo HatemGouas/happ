@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>happ</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="happ.css">
+
+</head>
+<body>
+    <div class="car hidden" style="width: 100%;">
+        <img src="https://i.imgur.com/LqUP6iW.png" alt="" width="100%" class="car">
+    </div>
+    <div class="car hidden" style="width: 100%;">
+        <img src="https://i.imgur.com/pFCVzRa.png" alt="" width="100%" class="car">
+    </div>
+    <div class="car hidden" style="width: 100%;">
+        <img src="https://i.imgur.com/YUGZ8gI.png" alt="" width="100%" class="car">
+    </div> 
+    <div class="car hidden" style="width: 100%;">
+        <img src="https://i.imgur.com/lwoMmrm.png" alt="" width="100%" class="car">
+    </div>
+    <div class="car hidden" style="width: 100%;">
+        <img src="https://i.imgur.com/NnCUpYz.png" alt="" width="100%" class="car">
+    </div>
+</body>
+<script>
+   
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        console.log(entry)
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+        else{
+            entry.target.classList.remove('show');
+        }
+    });
+ });
+ const hiddenElements = document.querySelectorAll('.hidden');
+    hiddenElements.forEach((el) => observer.observe(el));
+</script>
+</html>
